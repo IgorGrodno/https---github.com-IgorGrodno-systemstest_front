@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="headerItems">
+        @if(isAuth){
+        @if(curentUser?.username==='admin'){
+        <a class="logout" href="admin">adminPage</a>
+        }
+        <div class="curentUserItems">
+            <div class="logout" (click)="logOut()">
+                logout
+            </div>
+            <div class="logout" (click)="profile()">
+                profile
+            </div>
+        </div>
+        }
+        @else{
+        <div class="logout" (click)="login()">
+            login
+        </div>
+        }
+    </div>
+</header>

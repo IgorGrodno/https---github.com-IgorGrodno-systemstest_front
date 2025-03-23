@@ -1,0 +1,27 @@
+<div class="content">
+    <div class="wrapper">
+        <form class="signin" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <p>
+                <label>
+                    Логин
+                    <input formControlName="username" class="login-input" type="text" placeholder="Введите логин"
+                        autocomplete="username">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Пароль
+                    <input formControlName="password" class="login-input" type="password" placeholder="Введите пароль"
+                        autocomplete="current-password">
+                </label>
+            </p>
+            <p>
+                <button type="submit" class="login-button">&#xf0da;</button>
+            </p>
+            <p>
+                <a (click)="register()">Регистрация</a>
+            </p>
+        </form>
+
+    </div>
+</div>

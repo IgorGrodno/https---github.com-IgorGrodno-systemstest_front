@@ -1,0 +1,63 @@
+<div class="meals">
+    <p>Today meals list</p>
+    @for(meal of meals; track meal.id) {
+    <div class="meal">
+        <p>{{ meal.createdAt | date:'short' }}</p>
+        <p>{{ meal.calories }}</p>
+        <button (click)="deleteTodayMeal(meal.id)">Delete</button>
+    </div>
+    }
+
+    <div class="meals-constructor">
+        <div class="dishes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Calories</th>
+                        <th>Proteins (g)</th>
+                        <th>Carbs (g)</th>
+                        <th>Fats (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(mealDish of mealConstructor; track mealDish.id) {
+                    <tr (dblclick)="removeDish(mealDish)" class="cursor-pointer">
+                        <td>{{ mealDish.dish.name }}</td>
+                        <td>{{ mealDish.dish.calories }} cal</td>
+                        <td>{{ mealDish.dish.proteins }} g</td>
+                        <td>{{ mealDish.dish.carbohydrates }} g</td>
+                        <td>{{ mealDish.dish.fats }} g</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <p>Total: {{ mealCalories }} cal</p>
+            <button (click)="addMeal()">Add</button>
+        </div>
+        <div class="dishes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Calories</th>
+                        <th>Proteins (g)</th>
+                        <th>Carbs (g)</th>
+                        <th>Fats (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(dish of dishes; track dish.id) {
+                    <tr (dblclick)="addDish(dish)" class="cursor-pointer">
+                        <td>{{ dish.name }}</td>
+                        <td>{{ dish.calories }} cal</td>
+                        <td>{{ dish.proteins }} g</td>
+                        <td>{{ dish.carbohydrates }} g</td>
+                        <td>{{ dish.fats }} g</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

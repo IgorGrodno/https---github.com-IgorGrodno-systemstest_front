@@ -1,0 +1,28 @@
+.meals{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.meals-constructor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.meal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: max-content;
+    gap: 20px;
+}

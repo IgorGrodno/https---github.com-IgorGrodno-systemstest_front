@@ -1,0 +1,41 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.profile-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.meals-section{
+    display: flex;
+    width: 75%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}

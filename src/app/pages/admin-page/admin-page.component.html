@@ -1,0 +1,27 @@
+<div class="admin-page">
+    <h1>Admin page</h1>
+    <div class="users-table">
+        @if(users){
+        <table>
+            <tr>
+                <td>id</td>
+                <td>login</td>
+                <td>Email</td>
+                <td>roles</td>
+            </tr>
+            @for(user of users; track user.id){
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>@for(role of user.roles; track role.id){
+                    {{role.name}}}</td>
+                <td>
+                    <button (click)="deleteUser(user.id)">удалить</button>
+                </td>
+            </tr>
+            }
+        </table>
+        }
+    </div>
+</div>

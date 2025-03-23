@@ -1,0 +1,58 @@
+<div class="profile">
+    <div class="profile-info">
+        @if(curentUser){
+        <form [formGroup]="form" (ngSubmit)="submitForm()" class="profile-form">
+            <h3>User Form</h3>
+
+            <div class="form-item">
+                <label class="form-label">First Name</label>
+                <input formControlName="firstname" type="text" class="form-control" placeholder="Enter first name">
+
+            </div>
+
+
+            <div class="form-item">
+                <label class="form-label">Age</label>
+                <input formControlName="age" type="number" class="form-control" placeholder="Enter age">
+
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Weight (kg)</label>
+                <input formControlName="weight" type="number" class="form-control" placeholder="Enter weight">
+
+            </div>
+
+            <div class="form-item">
+                <label class="form-label">Height (cm)</label>
+                <input formControlName="height" type="number" class="form-control" placeholder="Enter height">
+
+            </div>
+
+
+            <div class="form-item">
+                <label class="form-label">Goal</label>
+                <select formControlName="goal" class="form-select">
+                    <option value="LOSE_WEIGHT">Lose weight</option>
+                    <option value="GAIN_MASS">Gain muscle</option>
+                    <option value="MAINTAIN_WEIGHT">Maintain weight</option>
+                </select>
+
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div>
+            <p>day meals list</p>
+            @for(meal of mealsByDay; track meal.id) {
+            <div class="meal">
+                <p>{{ meal.createdAt | date:'shortDate' }} calories</p>
+                <p>{{ meal.calories }}</p>
+            </div>
+            }
+        </div>
+        }
+    </div>
+    <app-meal-component [userId]="curentUser.id" class="meals-section"></app-meal-component>
+
+</div>
